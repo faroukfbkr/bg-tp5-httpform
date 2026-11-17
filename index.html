@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinéPass</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="container">
+            
+            <header class="header">
+                <div class="logo">🎬 CinéPass</div>
+                <p class="subtitle">Inscription au Club de Cinéma - Saison 2025</p>
+                <div class="header-bg-icon">🎬</div>
+            </header>
+
+            <div class="alert-box">
+                <span class="icon">💡</span>
+                <span class="text">Rejoignez notre club et profitez de tarifs réduits, d'avant-premières exclusives et de rencontres avec des réalisateurs !</span>
+            </div>
+
+            <form action="#" method="POST">
+                
+                <div class="section-container">
+                    <h3 class="section-title">👤 Informations personnelles</h3>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <label>Prénom :</label>
+                            <input type="text" name="prenom" placeholder="Ex. Ahmed" required>
+                        </div>
+                        <div class="col">
+                            <label>Nom :</label>
+                            <input type="text" name="nom" placeholder="Ex. Bensalem" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Adresse email :</label>
+                        <input type="email" name="email" placeholder="votre.email@exemple.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mot de passe (compte en ligne) :</label>
+                        <input type="password" name="password" placeholder="Minimum 8 caractères" minlength="8" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label>Téléphone :</label>
+                            <input type="tel" name="tel" placeholder="0555123456" pattern="[0-9]{10}">
+                        </div>
+                        <div class="col">
+                            <label>Date de naissance :</label>
+                            <input type="date" name="dob" max="2010-11-16">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container">
+                    <h3 class="section-title">🎫 Formule d'abonnement</h3>
+                    
+                    <fieldset class="custom-fieldset">
+                        <legend class="custom-legend">Choisissez votre formule :</legend>
+                        
+                        <label class="radio-item">
+                            <input type="radio" name="formule" value="basique" checked>
+                            <span>🥉 Basique - 4 séances/mois (2000 DA/mois)</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="formule" value="premium">
+                            <span>🥈 Premium - 10 séances/mois (4500 DA/mois)</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="formule" value="illimite">
+                            <span>🥇 Illimité - Séances illimitées (7000 DA/mois)</span>
+                        </label>
+                    </fieldset>
+
+                    <div class="row mt-15">
+                        <div class="col">
+                            <label>Date de début souhaité :</label>
+                            <div class="input-icon-wrapper">
+                                <input type="date" 
+                                        min="2026-11-16"
+                                        name="date_debut">
+                                <i class="far fa-calendar input-icon-overlay"></i>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label>Durée d'engagement :</label>
+                            <select name="duree">
+                                <option value="">-- Sélectionner --</option>
+                                <option value="3">3 Mois</option>
+                                <option value="6">6 Mois (-5%)</option>
+                                <option value="12">12 Mois (-10%)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-15">
+                        <label>Nombre d'accompagnants habituels :</label>
+                        <input type="number" name="accompagnants" value="0" min="0">
+                    </div>
+                </div>
+
+                <div class="section-container">
+                    <h3 class="section-title">🎥 Vos préférences cinématographiques</h3>
+                    
+                    <fieldset class="custom-fieldset">
+                        <legend class="custom-legend">Genres de films préférés :</legend>
+                        
+                        <div class="checkbox-list">
+                            <label class="check-item"><input type="checkbox" name="genre" value="action"> 💥 Action / Aventure</label>
+                            <label class="check-item"><input type="checkbox" name="genre" value="comedie"> 😄 Comédie</label>
+                            <label class="check-item"><input type="checkbox" name="genre" value="drame"> 🎭 Drame</label>
+                            <label class="check-item"><input type="checkbox" name="genre" value="horreur"> 👻 Horreur / Thriller</label>
+                            <label class="check-item"><input type="checkbox" name="genre" value="scifi"> 🚀 Science-fiction</label>
+                            <label class="check-item"><input type="checkbox" name="genre" value="romance"> 💕 Romance</label>
+                            <label class="check-item"><input type="checkbox" name="genre" value="docu"> 📹 Documentaire</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group mt-15">
+                        <label>Langues de films (maintenir Ctrl/Cmd pour sélection multiple) :</label>
+                        <select name="langues" multiple size="5" class="multi-select">
+                            <option value="ar">العربية (Arabe)</option>
+                            <option value="fr" selected>Français</option>
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Réalisateur préféré (recherche) :</label>
+                        <input type="search" name="realisateur" placeholder="Ex. Hitchcock, Kubrick, Tarantino...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Site ou blog cinéma que vous suivez :</label>
+                        <input type="url" name="website" placeholder="https://exemple.com">
+                    </div>
+                </div>
+
+                <div class="section-container">
+                    <h3 class="section-title">📅 Disponibilités et préférences</h3>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <label>Semaine préférée :</label>
+                            <input type="week" name="semaine">
+                        </div>
+                        <div class="col">
+                            <label>Horaire préféré :</label>
+                            <input type="time" name="heure">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Première séance souhaitée :</label>
+                        <input type="datetime-local" name="premiere_seance">
+                    </div>
+
+                    <div class="form-group">
+                        <label>À quelle fréquence allez-vous au cinéma actuellement ?</label>
+                        <div class="range-wrapper">
+                            <input type="range" min="0" max="10" value="4" oninput="document.getElementById('rangeVal').innerText = this.value">
+                            <div class="range-text">
+                                <span id="rangeVal" class="badge-red">4</span> fois/mois
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Couleur de votre carte de membre :</label>
+                        <input type="color" name="color" value="#e63946" class="color-input">
+                    </div>
+                </div>
+
+                <div class="section-container no-mb">
+                    <h3 class="section-title">📎 Documents et informations complémentaires</h3>
+                    
+                    <div class="form-group">
+                        <label>Photo d'identité (pour la carte) :</label>
+                        <input type="file" name="photo" accept="image/*" class="dashed-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Justificatif étudiant (optionnel, -20% sur l'abonnement) :</label>
+                        <input type="file" name="justif" accept=".pdf,.jpg,.jpeg,.png" class="dashed-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Parlez-nous de votre passion pour le cinéma :</label>
+                        <textarea name="passion" rows="4" placeholder="Quel est votre film préféré ? Pourquoi aimez-vous le cinéma ? Des suggestions pour le club ?"></textarea>
+                    </div>
+
+                    <p class="hint-text">Code de parrainage appliqué automatiquement</p>
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="btn-submit">🎬 Rejoindre CinéPass</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
